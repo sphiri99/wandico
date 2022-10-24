@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Wandico order screen</title>
+    <link href="/css/common.css" rel="stylesheet">
+    <div th:replace="fragments/productioninfoheader :: header-css"/>
+
+</head>
+
+<body>
+<div th:replace="fragments/productioninfoheader :: productioninfoheader"/>
+
+<div class="container">
+
+    <form id="prodForm" method="POST" class="form-signin" th:object="${userForm}" th:action="@{/prod}">
+        <h2 class="form-signin-heading">Production Details</h2>
+        <div class="form-group">
+            <input type="text" th:field="*{employees}" class="form-control" placeholder="Number of Employees"
+                   autofocus="true">
+            <span class="has-error" th:if="${#fields.hasErrors('employees')}" th:errors="*{employees}"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="text" th:field="*{turnAroundTimePerEmployee}" class="form-control" placeholder="Turn around time per employee"
+                   autofocus="true">
+            <span class="has-error" th:if="${#fields.hasErrors('turnAroundTimePerEmployee')}" th:errors="*{turnAroundTimePerEmployee}"></span>
+
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </form>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>

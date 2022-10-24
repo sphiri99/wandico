@@ -2,9 +2,6 @@ drop table if exists pokemon;
 drop table if exists user_details_role;
 drop table if exists user_account_details;
 drop table if exists order_details;
-drop table if exists prod_details;
-drop table if exists product;
-
 CREATE TABLE pokemon
 (
     id      INTEGER      NOT NULL AUTO_INCREMENT,
@@ -42,23 +39,5 @@ CREATE TABLE order_details
     est_turnaround_time VARCHAR(128) NOT NULL,
     due_date VARCHAR(128) NOT NULL,
     status VARCHAR(128) NOT NULL,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE prod_details
-(
-    id      INTEGER      NOT NULL AUTO_INCREMENT,
-    number_of_employees INTEGER  NOT NULL,
-    turn_around_time_per_employee DOUBLE  NOT NULL,
-
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE product
-(
-    id      INTEGER      NOT NULL AUTO_INCREMENT,
-    product_name VARCHAR(255)  NOT NULL,
-    product_rurn_around_time DOUBLE  NOT NULL,
-
     PRIMARY KEY (id)
 );

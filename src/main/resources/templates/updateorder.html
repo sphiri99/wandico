@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Log in with your account</title>
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+    <link href="/css/main.css" rel="stylesheet">
+    <div th:replace="fragments/header :: header-css"/>
+
+</head>
+
+<body>
+<div class="container">
+    <div>
+        <form th:action="@{/orderUpdate}" th:object="${emp}" method="post">
+            <input type="textro" name="id" th:value="${emp.id}" readonly="">
+            <input type="text" name="name" th:value="${emp.name}" readonly="">
+            <input type="text" name="itemName" th:value="${emp.itemName}" readonly="">
+            <div class="form-group">
+                <select  name="status" th:field="*{status}" class="form-control" autofocus="true">
+                    <option value="INPROGRESS">INPROGRESS</option>
+                    <option value="PENDING">PENDING</option>
+                    <option value="COMPLETE">COMPLETE</option>
+                    <option value="BLOCKED">BLOCKED</option>
+
+                </select>
+
+            </div>
+            <input type="text" name="quantity" th:value="${emp.quantity}">
+
+            <button type="submit">UPDATE</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
