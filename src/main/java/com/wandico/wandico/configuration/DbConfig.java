@@ -9,7 +9,6 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -22,9 +21,9 @@ public class DbConfig {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 //        dataSource.setUrl("jdbc:mysql://mysql_host:3306/wandico?serverTimezone=UTC");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/wandico?serverTimezone=UTC");
-        dataSource.setUsername( "jboss" );
-        dataSource.setPassword( "jbossdbpassword" );
+        dataSource.setUrl("jdbc:mysql://db-mysql-nyc1-70449-do-user-12743879-0.b.db.ondigitalocean.com:25060/wandico?serverTimezone=UTC");
+        dataSource.setUsername( "doadmin" );
+        dataSource.setPassword( "AVNS_u0EJ9GI8tIkjrmratKV" );
         return dataSource;
     }
 
