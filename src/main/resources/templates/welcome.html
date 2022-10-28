@@ -34,7 +34,6 @@
             <th>Due Date</th>
             <th>Status</th>
             <th>Edit</th>
-            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -47,8 +46,6 @@
             <td th:text="${order.dueDate}"></td>
             <td th:text="${order.status}"></td>
             <td><a th:href="@{/edit/{id}(id=${order.id})}">Edit</a></td>
-            <td><a th:href="@{/delete/{id}(id=${order.id})}">Delete</a></td>
-
         </tr>
         </tbody>
     </table>
